@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "c6796a8e-d066-481d-9a92-572d225d72df",
+		"name": "StudentsAPIResponseValidations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37066334"
+	},
+	"item": [
+		{
+			"name": "Get Single Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Content-Type Header",
+							"pm.test(\"Content-Type Header is present\", () => {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"// Content-Type Header Value",
+							"pm.test(\"Content-Type Header is application/json\", () => {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							"",
+							"pm.test(\"Content-Length Header is 123\", () => {",
+							"    pm.expect(pm.response.headers.get('Content-Length')).to.eql('123');",
+							"});",
+							"",
+							"// test if a cookie is present in the response",
+							"pm.test(\"Cookie 'language' is present\", () => {",
+							"    pm.expect(pm.cookies.has('language')).to.be.true;",
+							"});",
+							"",
+							"// test for a particular cookie value",
+							"pm.test(\"Cookie language has value 1\", () => {",
+							"    pm.expect(pm.cookies.get('language')).to.eql('en-gb');",
+							"});",
+							"",
+							"// test for the response time to be within a specified range",
+							"pm.test(\"Response time is less than 50ms\", () => {",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
+							"});",
+							"",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test data type of the response\", ()=> {",
+							"    pm.expect(jsonData).to.be.an(\"object\");",
+							"    pm.expect(jsonData.name).to.be.a(\"string\");",
+							"    pm.expect(jsonData.id).to.be.a(\"string\");",
+							"    pm.expect(jsonData.courses).to.be.an(\"array\");",
+							"});",
+							"",
+							"// check if an array is empty and if it contains particular items",
+							"pm.test(\"Test array properties\", () => {",
+							"    // courses includes \"Java\"",
+							"    pm.expect(jsonData.courses).to.include(\"Java\");",
+							"    // courses array must include all listed",
+							"    pm.expect(jsonData.courses).to.have.members([\"Java\", \"Selenium\"]);",
+							"});",
+							"",
+							"pm.test(\"Values of all fields in response\", () => {",
+							"    pm.expect(jsonData.id).to.eql(\"1\");",
+							"    pm.expect(jsonData.name).to.eql(\"John\");",
+							"    pm.expect(jsonData.location).to.eql(\"USA\");",
+							"    pm.expect(jsonData.phone).to.eql(123456789);",
+							"    pm.expect(jsonData.courses[0]).to.eql(\"Java\");",
+							"    pm.expect(jsonData.courses[1]).to.eql(\"Selenium\");",
+							"});",
+							"",
+							"// JSON schema validation",
+							"var schema = {",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",",
+							"  \"type\": \"object\",",
+							"  \"properties\": {",
+							"    \"id\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"name\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"location\": {",
+							"      \"type\": \"string\"",
+							"    },",
+							"    \"phone\": {",
+							"      \"type\": \"integer\"",
+							"    },",
+							"    \"courses\": {",
+							"      \"type\": \"array\",",
+							"      \"items\": [",
+							"        {",
+							"          \"type\": \"string\"",
+							"        },",
+							"        {",
+							"          \"type\": \"string\"",
+							"        }",
+							"      ]",
+							"    }",
+							"  },",
+							"  \"required\": [",
+							"    \"id\",",
+							"    \"name\",",
+							"    \"location\",",
+							"    \"phone\",",
+							"    \"courses\"",
+							"  ]",
+							"};",
+							"",
+							"pm.test(\"Schema is valid\", () => {",
+							"    pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Students",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"Davis\",\n        \"location\": \"South Africa\",\n        \"phone\": 654123789,\n        \"courses\": [\n            \"C\",\n            \"C++\"\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"Davis\",\n        \"location\": \"Germany\",\n        \"phone\": 654123789,\n        \"courses\": [\n            \"C\",\n            \"C++\"\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/868e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"868e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students/868e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"868e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
