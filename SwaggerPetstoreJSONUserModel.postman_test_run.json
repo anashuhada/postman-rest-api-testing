@@ -1,0 +1,178 @@
+{
+	"id": "d4971a43-10ef-489f-8ffe-7fd898a95db5",
+	"name": "SwaggerPetstoreJSONUserModel",
+	"timestamp": "2024-12-13T14:19:05.497Z",
+	"collection_id": "37066334-2c6119bf-d5e9-4901-aa9c-d3172ee0341a",
+	"folder_id": 0,
+	"environment_id": "37066334-dff21766-f55e-48b6-b470-2a0d83de4d7d",
+	"totalPass": 12,
+	"delay": "2",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-12-13T14:19:00.580Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c2d1da7c-8c19-404e-81b2-3958ae610601",
+			"name": "Create User",
+			"url": "https://petstore.swagger.io/v2/user",
+			"time": 350,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code": true
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				318,
+				382,
+				350
+			],
+			"allTests": [
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				}
+			]
+		},
+		{
+			"id": "a4e401d1-30ee-4bec-85a6-373ff7c01768",
+			"name": "Get user by name",
+			"url": "https://petstore.swagger.io/v2/user/john5rhz2lt4118",
+			"time": 414,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code": true
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				312,
+				395,
+				414
+			],
+			"allTests": [
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				}
+			]
+		},
+		{
+			"id": "e9d5be17-18d7-4c5f-b5b5-b2455fb892af",
+			"name": "Update user by name",
+			"url": "https://petstore.swagger.io/v2/user/john5rhz2lt4118",
+			"time": 389,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code": true
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				353,
+				383,
+				389
+			],
+			"allTests": [
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				}
+			]
+		},
+		{
+			"id": "33ec0acc-8981-4da3-86b1-d23b78bd63ed",
+			"name": "Delete user by name",
+			"url": "https://petstore.swagger.io/v2/user/john5rhz2lt4118",
+			"time": 315,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code": true
+			},
+			"testPassFailCounts": {
+				"Check status code": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				390,
+				498,
+				315
+			],
+			"allTests": [
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				},
+				{
+					"Check status code": true
+				}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 4499,
+	"collection": {
+		"requests": [
+			{
+				"id": "c2d1da7c-8c19-404e-81b2-3958ae610601",
+				"method": "POST"
+			},
+			{
+				"id": "a4e401d1-30ee-4bec-85a6-373ff7c01768",
+				"method": "GET"
+			},
+			{
+				"id": "e9d5be17-18d7-4c5f-b5b5-b2455fb892af",
+				"method": "PUT"
+			},
+			{
+				"id": "33ec0acc-8981-4da3-86b1-d23b78bd63ed",
+				"method": "DELETE"
+			}
+		]
+	}
+}
