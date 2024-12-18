@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "a78458a2-f44f-447e-b30f-f78162f2a9e4",
+		"name": "FakeRESTAPIWebV1CoverPhotos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37066334"
+	},
+	"item": [
+		{
+			"name": "Get cover photos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(jsonData);",
+							"",
+							"// validate json response ",
+							"pm.test(\"Checking json data response\", () => {",
+							"    // pm.expect(jsonData[50].title).to.eql(\"Book 51\");",
+							"    let actualData = jsonData[25].url;",
+							"    let expectedData = \"https://placeholdit.imgix.net/~text?txtsize=33&txt=Book 26&w=250&h=350\";",
+							"    console.log(\"Actual data: \", actualData, \" | Expected data: \", expectedData);",
+							"    ",
+							"    pm.expect(actualData).to.eql(expectedData);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new cover photo",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// random id between 0 and 999",
+							"var randomId = Math.floor(Math.random() * 1000); ",
+							"console.log(randomId);",
+							"pm.collectionVariables.set(\"id\", randomId);",
+							"pm.collectionVariables.set(\"idBook\", randomId);",
+							"",
+							"var randomUrl = pm.variables.replaceIn(\"{{$randomUrl}}\");",
+							"console.log(randomUrl);",
+							"pm.collectionVariables.set(\"url\", randomUrl);",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData);",
+							"",
+							"pm.test(\"Checking response body for validation - id matched\", () => {",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"id\"));",
+							"    console.log(\"Actual id: \", jsonData.id, \" | Expected id: \", pm.collectionVariables.get(\"id\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - idBook matched\", () => {",
+							"    pm.expect(jsonData.idBook).to.eql(pm.collectionVariables.get(\"idBook\"));",
+							"    console.log(\"Actual idBook: \", jsonData.idBook, \" | Expected idBook: \", pm.collectionVariables.get(\"idBook\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - url matched\", () => {",
+							"    pm.expect(jsonData.url).to.eql(pm.collectionVariables.get(\"url\"));",
+							"    console.log(\"Actual url: \", jsonData.url, \" | Expected url: \", pm.collectionVariables.get(\"url\"));",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": {{id}},\n  \"idBook\": {{idBook}},\n  \"url\": \"{{url}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book cover by idBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));",
+							"console.log(\"Current idBook: \", pm.collectionVariables.get(\"idBook\"));",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));",
+							"console.log(\"Current idBook: \", pm.collectionVariables.get(\"idBook\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos/books/covers/{{idBook}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos",
+						"books",
+						"covers",
+						"{{idBook}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book cover by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));",
+							"console.log(\"Current idBook: \", pm.collectionVariables.get(\"idBook\"));",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));",
+							"console.log(\"Current idBook: \", pm.collectionVariables.get(\"idBook\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit book cover by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData)",
+							"",
+							"pm.test(\"Checking response body for validation - url change matched\", () => {",
+							"    pm.expect(jsonData.url).to.eql(pm.collectionVariables.get(\"url\"));",
+							"    console.log(\"Actual url: \", jsonData.url, \" | Expected url: \", pm.collectionVariables.get(\"url\"));",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomUrl = pm.variables.replaceIn(\"{{$randomUrl}}\");",
+							"console.log(randomUrl);",
+							"pm.collectionVariables.set(\"url\", randomUrl);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": {{id}},\n  \"idBook\": {{idBook}},\n  \"url\": \"{{url}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove book by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.collectionVariables.unset(\"id\");",
+							"pm.collectionVariables.unset(\"idBook\");",
+							"pm.collectionVariables.unset(\"url\");",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://fakerestapi.azurewebsites.net/",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "idBook",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}

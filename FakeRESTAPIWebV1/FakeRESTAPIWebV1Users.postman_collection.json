@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "f3d00d3b-d6f8-4bbc-b040-d122ad7924fe",
+		"name": "FakeRESTAPIWebV1Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37066334"
+	},
+	"item": [
+		{
+			"name": "Get users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(jsonData);",
+							"",
+							"// validate json response ",
+							"pm.test(\"Checking json data response\", () => {",
+							"    // pm.expect(jsonData[50].title).to.eql(\"Book 51\");",
+							"    let actualData = jsonData[7].userName;",
+							"    let expectedData = \"User 8\";",
+							"    console.log(\"Actual data: \", actualData, \" | Expected data: \", expectedData);",
+							"    ",
+							"    pm.expect(actualData).to.eql(expectedData);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Users",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// random id between 0 and 999",
+							"var randomId = Math.floor(Math.random() * 1000); ",
+							"console.log(randomId);",
+							"pm.collectionVariables.set(\"id\", randomId);",
+							"",
+							"var randomUsername = pm.variables.replaceIn(\"{{$randomUserName}}\");",
+							"console.log(randomUsername);",
+							"pm.collectionVariables.set(\"userName\", randomUsername);",
+							"",
+							"var randomPassword = pm.variables.replaceIn(\"{{$randomPassword}}\");",
+							"console.log(randomPassword);",
+							"pm.collectionVariables.set(\"password\", randomPassword);",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData);",
+							"",
+							"pm.test(\"Checking response body for validation - id matched\", () => {",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"id\"));",
+							"    console.log(\"Actual id: \", jsonData.id, \" | Expected id: \", pm.collectionVariables.get(\"id\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - userName matched\", () => {",
+							"    pm.expect(jsonData.userName).to.eql(pm.collectionVariables.get(\"userName\"));",
+							"    console.log(\"Actual userName: \", jsonData.userName, \" | Expected userName: \", pm.collectionVariables.get(\"userName\"));",
+							"});",
+							"",
+							"",
+							"pm.test(\"Checking response body for validation - password matched\", () => {",
+							"    pm.expect(jsonData.password).to.eql(pm.collectionVariables.get(\"password\"));",
+							"    console.log(\"Actual password: \", jsonData.password, \" | Expected password: \", pm.collectionVariables.get(\"password\"));",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": {{id}},\n  \"userName\": \"{{userName}}\",\n  \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Users",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Users/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit user by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData)",
+							"",
+							"pm.test(\"Checking response body for validation - password change matched\", () => {",
+							"    pm.expect(jsonData.password).to.eql(pm.collectionVariables.get(\"password\"));",
+							"    console.log(\"Actual password: \", jsonData.password, \" | Expected password: \", pm.collectionVariables.get(\"password\"));",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomPassword = pm.variables.replaceIn(\"{{$randomPassword}}\");",
+							"console.log(randomPassword);",
+							"pm.collectionVariables.set(\"password\", randomPassword);",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": {{id}},\n  \"userName\": \"{{userName}}\",\n  \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Users/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Users",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove user by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.collectionVariables.unset(\"id\");",
+							"pm.collectionVariables.unset(\"userName\");",
+							"pm.collectionVariables.unset(\"password\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/CoverPhotos/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"CoverPhotos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://fakerestapi.azurewebsites.net/",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "randomUsername",
+			"value": ""
+		},
+		{
+			"key": "randomPassword",
+			"value": ""
+		},
+		{
+			"key": "userName",
+			"value": ""
+		},
+		{
+			"key": "password",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}

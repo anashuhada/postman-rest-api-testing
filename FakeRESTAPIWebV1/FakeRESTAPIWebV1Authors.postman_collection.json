@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "311da45e-c85c-4337-94c6-2851c01056dd",
+		"name": "FakeRESTAPIWebV1Authors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37066334"
+	},
+	"item": [
+		{
+			"name": "Get authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(jsonData);",
+							"",
+							"// validate json response ",
+							"pm.test(\"Checking json data response\", () => {",
+							"    pm.expect(jsonData[11].idBook).to.eql(4);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Authors",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new author",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomId = Math.floor(Math.random() * 1000); ",
+							"pm.collectionVariables.set(\"id\", randomId);",
+							"console.log(randomId);",
+							"",
+							"var randomIdBook = Math.floor(Math.random() * 1000); ",
+							"pm.collectionVariables.set(\"idBook\", randomIdBook);",
+							"console.log(randomIdBook);",
+							"",
+							"var randomFirstName = pm.variables.replaceIn(\"{{$randomFirstName}}\");",
+							"pm.collectionVariables.set(\"firstName\", randomFirstName);",
+							"console.log(randomFirstName);",
+							"",
+							"var randomLastName = pm.variables.replaceIn(\"{{$randomLastName}}\");",
+							"pm.collectionVariables.set(\"lastName\", randomLastName);",
+							"console.log(randomLastName);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData);",
+							"",
+							"pm.test(\"Checking response body for validation - id matched\", () => {",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"id\"));",
+							"    console.log(\"Actual id: \", jsonData.id, \" | Expected id: \", pm.collectionVariables.get(\"id\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - idBook matched\", () => {",
+							"    pm.expect(jsonData.idBook).to.eql(pm.collectionVariables.get(\"idBook\"));",
+							"    console.log(\"Actual idBook: \", jsonData.idBook, \" | Expected idBook: \", pm.collectionVariables.get(\"idBook\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - firstName matched\", () => {",
+							"    pm.expect(jsonData.firstName).to.eql(pm.collectionVariables.get(\"firstName\"));",
+							"    console.log(\"Actual firstName: \", jsonData.firstName, \" | Expected firstName: \", pm.collectionVariables.get(\"firstName\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - lastName matched\", () => {",
+							"    pm.expect(jsonData.lastName).to.eql(pm.collectionVariables.get(\"lastName\"));",
+							"    console.log(\"Actual lastName: \", jsonData.lastName, \" | Expected lastName: \", pm.collectionVariables.get(\"lastName\"));",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": {{id}},\n  \"idBook\": {{idBook}},\n  \"firstName\": \"{{firstName}}\",\n  \"lastName\": \"{{lastName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Authors",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get idBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"console.log(\"Current idBook: \", pm.collectionVariables.get(\"idBook\"));",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Current idBook: \", pm.collectionVariables.get(\"idBook\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Authors/authors/books/{{idBook}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Authors",
+						"authors",
+						"books",
+						"{{idBook}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get author by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Current id: \", pm.collectionVariables.get(\"id\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Authors/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Authors",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit author by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData);",
+							"",
+							"pm.test(\"Checking response body for validation - author name change matched\", () => {",
+							"    pm.expect(jsonData.firstName).to.eql(pm.collectionVariables.get(\"firstName\"));",
+							"    console.log(\"Actual firstName: \", jsonData.firstName, \" | Expected firstName: \", pm.collectionVariables.get(\"firstName\"));",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomFirstName = Math.random().toString(36).substring(2);",
+							"pm.collectionVariables.set(\"firstName\", randomFirstName);",
+							"console.log(randomFirstName);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": {{id}},\n  \"idBook\": {{idBook}},\n  \"firstName\": \"{{firstName}}\",\n  \"lastName\": \"{{lastName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Authors/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Authors",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove author by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.collectionVariables.unset(\"id\");",
+							"pm.collectionVariables.unset(\"idBook\");",
+							"pm.collectionVariables.unset(\"firstName\");",
+							"pm.collectionVariables.unset(\"lastName\");",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Authors/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Authors",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://fakerestapi.azurewebsites.net/",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "idBook",
+			"value": ""
+		},
+		{
+			"key": "firstName",
+			"value": ""
+		},
+		{
+			"key": "lastName",
+			"value": ""
+		},
+		{
+			"key": "idBookNew",
+			"value": ""
+		}
+	]
+}

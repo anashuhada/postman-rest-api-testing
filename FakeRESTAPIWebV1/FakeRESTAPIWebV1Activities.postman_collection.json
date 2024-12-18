@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "5e321632-d045-4a09-b62a-fdefbae14a93",
+		"name": "FakeRESTAPIWebV1Activities",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37066334"
+	},
+	"item": [
+		{
+			"name": "Get activities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(jsonData);",
+							"",
+							"// validate json response ",
+							"pm.test(\"Checking json data response\", () => {",
+							"    pm.expect(jsonData[11].title).to.eql(\"Activity 12\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Activities",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new activity",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomId = Math.floor(Math.random() * 1000); ",
+							"// console.log(randomId);",
+							"pm.collectionVariables.set(\"id\", randomId);",
+							"",
+							"var randomTitle = Math.random().toString(36).substring(2);",
+							"// console.log(randomTitle);",
+							"pm.collectionVariables.set(\"title\", randomTitle);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData);",
+							"",
+							"pm.test(\"Checking response body for validation - id matched\", () => {",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"id\"));",
+							"    console.log(\"Actual id: \", jsonData.id, \" | Expected id: \", pm.collectionVariables.get(\"id\"));",
+							"});",
+							"",
+							"pm.test(\"Checking response body for validation - title matched\", () => {",
+							"    pm.expect(jsonData.title).to.eql(pm.collectionVariables.get(\"title\"));",
+							"    console.log(\"Actual title: \", jsonData.title, \" | Expected title: \", pm.collectionVariables.get(\"title\"));",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": {{id}},\n    \"title\": \"{{title}}\",\n    \"dueDate\": \"2024-12-17T15:01:44.302Z\",\n    \"completed\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Activities",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get activity by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Activities/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit activity by id",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomTitle = Math.random().toString(36).substring(2);",
+							"// console.log(randomTitle);",
+							"pm.collectionVariables.set(\"title\", randomTitle);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"console.log(\"JSON data: \", jsonData);",
+							"",
+							"pm.test(\"Checking response body for validation - title change matched\", () => {",
+							"    pm.expect(jsonData.title).to.eql(pm.collectionVariables.get(\"title\"));",
+							"    console.log(\"Actual title: \", jsonData.title, \" | Expected title: \", pm.collectionVariables.get(\"title\"));",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"{{title}}\",\n  \"dueDate\": \"2024-12-17T15:01:44.302Z\",\n  \"completed\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/Activities/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete activity by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// remove variables after successfully executed the collection",
+							"pm.collectionVariables.unset(\"id\");",
+							"pm.collectionVariables.unset(\"title\");",
+							"pm.collectionVariables.unset(\"dueDate\");",
+							"pm.collectionVariables.unset(\"completed\");"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Current ID: \", pm.collectionVariables.get(\"activity_id\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/v1/Activities/{{id}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"Activities",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://fakerestapi.azurewebsites.net/",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "title",
+			"value": ""
+		},
+		{
+			"key": "activity_id",
+			"value": ""
+		}
+	]
+}
