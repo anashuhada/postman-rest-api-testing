@@ -29,6 +29,16 @@
         "C#",
         "RestAPI"
       ]
+    },
+    {
+      "id": "774a",
+      "name": "Davis",
+      "location": "South Africa",
+      "phone": 654123789,
+      "courses": [
+        "C",
+        "C++"
+      ]
     }
   ]
 }
