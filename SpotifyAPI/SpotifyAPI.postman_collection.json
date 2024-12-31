@@ -1,0 +1,2186 @@
+{
+	"info": {
+		"_postman_id": "aaa40860-2d19-4339-b8af-477716629573",
+		"name": "SpotifyAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37066334"
+	},
+	"item": [
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Get Album",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}albums/4aawyAB9vmqN3uQ7FjRGTy",
+							"host": [
+								"{{baseUrl}}albums"
+							],
+							"path": [
+								"4aawyAB9vmqN3uQ7FjRGTy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Albums",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}albums?ids=382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc",
+							"host": [
+								"{{baseUrl}}albums"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc"
+								},
+								{
+									"key": "market",
+									"value": "ES",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Album Tracks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}albums/4aawyAB9vmqN3uQ7FjRGTy/tracks",
+							"host": [
+								"{{baseUrl}}albums"
+							],
+							"path": [
+								"4aawyAB9vmqN3uQ7FjRGTy",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Releases",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}browse/new-releases?offset=0&limit=20",
+							"host": [
+								"{{baseUrl}}browse"
+							],
+							"path": [
+								"new-releases"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "locale",
+									"value": "en-GB,en-US;q%3D0.9,en;q%3D0.8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Get Artist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}artists/0TnOYISbd1XYRBk9myaseg",
+							"host": [
+								"{{baseUrl}}artists"
+							],
+							"path": [
+								"0TnOYISbd1XYRBk9myaseg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Artists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}artists?ids=2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+							"host": [
+								"{{baseUrl}}artists"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist's Album",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}artists/0TnOYISbd1XYRBk9myaseg/albums?include_groups=single,appears_on&market=ES&limit=10&offset=5",
+							"host": [
+								"{{baseUrl}}artists"
+							],
+							"path": [
+								"0TnOYISbd1XYRBk9myaseg",
+								"albums"
+							],
+							"query": [
+								{
+									"key": "include_groups",
+									"value": "single,appears_on"
+								},
+								{
+									"key": "market",
+									"value": "ES"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist's Top Tracks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}artists/0TnOYISbd1XYRBk9myaseg/top-tracks?market=ES",
+							"host": [
+								"{{baseUrl}}artists"
+							],
+							"path": [
+								"0TnOYISbd1XYRBk9myaseg",
+								"top-tracks"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Several Browse Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}browse/categories?locale=sv_SE&limit=10&offset=5",
+							"host": [
+								"{{baseUrl}}browse"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "locale",
+									"value": "sv_SE"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Browse Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}browse/categories/dinner?locale=sv_SE",
+							"host": [
+								"{{baseUrl}}browse"
+							],
+							"path": [
+								"categories",
+								"dinner"
+							],
+							"query": [
+								{
+									"key": "locale",
+									"value": "sv_SE"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Markets",
+			"item": [
+				{
+					"name": "Get Available Markets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}markets",
+							"host": [
+								"{{baseUrl}}markets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search for Item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}search?q=remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis&type=album&market=ES&limit=10&offset=5&include_external=audio",
+							"host": [
+								"{{baseUrl}}search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "remaster%2520track%3ADoxy%2520artist%3AMiles%2520Davis"
+								},
+								{
+									"key": "type",
+									"value": "album"
+								},
+								{
+									"key": "market",
+									"value": "ES"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								},
+								{
+									"key": "include_external",
+									"value": "audio"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tracks",
+			"item": [
+				{
+					"name": "Get Track",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}tracks/11dFghVXANMlKmJXsNCbNl",
+							"host": [
+								"{{baseUrl}}tracks"
+							],
+							"path": [
+								"11dFghVXANMlKmJXsNCbNl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Tracks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}tracks/?market=ES&ids=7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+							"host": [
+								"{{baseUrl}}tracks"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								},
+								{
+									"key": "ids",
+									"value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Tracks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/tracks?market=ES&limit=10&offset=5",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Tracks for Current User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        \"4iV5W9uYEdYUVa79Axb7Rh\",\n        \"1301WleyT98MSxVHPZCA6M\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/tracks?ids=7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Tracks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/tracks?ids=7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Tracks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/tracks/contains?ids=7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"tracks",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shows",
+			"item": [
+				{
+					"name": "Get Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}shows/38bS44xjbVVZ3No3ByF1dJ",
+							"host": [
+								"{{baseUrl}}shows"
+							],
+							"path": [
+								"38bS44xjbVVZ3No3ByF1dJ"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Shows",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}shows?market=ES&ids=5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+							"host": [
+								"{{baseUrl}}shows"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								},
+								{
+									"key": "ids",
+									"value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Shows",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/shows?limit=10&offset=5",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"shows"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Shows for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/shows?ids=5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"shows"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Shows",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/shows?ids=5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ&market=ES",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"shows"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ"
+								},
+								{
+									"key": "market",
+									"value": "ES"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Shows",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/shows/contains?ids=5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"shows",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Current User's Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me",
+							"host": [
+								"{{baseUrl}}me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Top Items",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/top/artists?time_range=medium_term&limit=10&offset=5",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"top",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "time_range",
+									"value": "medium_term"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}users/smedjan",
+							"host": [
+								"{{baseUrl}}users"
+							],
+							"path": [
+								"smedjan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Playlist",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"public\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/followers",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Playlist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"public\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/followers",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Followed Artists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/following?type=artist&after=0I2XqVXqHScXjHhk6AYYRe&limit=10",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "after",
+									"value": "0I2XqVXqHScXjHhk6AYYRe"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Artists or Users",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        [\n            \"74ASZWbe4lXaubB36ztrGX\",\n            \"08td7MxkoHQkXnWAYD8d6Q\"\n        ]\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/following?type=artist&ids=2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Artists or Users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/following?type=artist&ids=2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check If User Follows Artists or Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/following/contains?type=artist&ids=2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"following",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if Current User Follows Playlist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/followers/contains",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"followers",
+								"contains"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playlists",
+			"item": [
+				{
+					"name": "Get Playlist",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n?market=ES",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Playlist Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Playlist Title\",\n    \"description\": \"Updated playlist description\",\n    \"public\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/tracks?market=ES&fields=total",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								},
+								{
+									"key": "fields",
+									"value": "total"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Playlist Items",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"range_start\": 1,\n    \"insert_before\": 3,\n    \"range_length\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/tracks",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Items to Playlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uris\": [\n        \"local\"\n    ],\n    \"position\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/tracks?position=0&uris=spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh,spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "position",
+									"value": "0"
+								},
+								{
+									"key": "uris",
+									"value": "spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh,spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Playlist Items",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tracks\": [\n        {\n            \"uri\": \"string\"\n        }\n    ],\n    \"snapshot_id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/tracks",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User's Playlists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/playlists?limit=10&offset=5",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"playlists"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Playlists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}users/smedjan/playlists?limit=10&offset",
+							"host": [
+								"{{baseUrl}}users"
+							],
+							"path": [
+								"smedjan",
+								"playlists"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Playlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Your Coolest Playlist\",\n    \"description\": \"New playlist description\",\n    \"public\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}users/smedjan/playlists",
+							"host": [
+								"{{baseUrl}}users"
+							],
+							"path": [
+								"smedjan",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Cover Image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}playlists/3cEYpjA9oz9GiPac4AsH4n/images",
+							"host": [
+								"{{baseUrl}}playlists"
+							],
+							"path": [
+								"3cEYpjA9oz9GiPac4AsH4n",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player",
+			"item": [
+				{
+					"name": "Get Playback State",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player?market=ES",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Playback",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_ids\": [\n        \"74ASZWbe4lXaubB36ztrGX\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/player",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Devices",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/devices",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Currently Playing Track",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/currently-playing?market=ES",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"currently-playing"
+							],
+							"query": [
+								{
+									"key": "market",
+									"value": "ES"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start/Resume Playback",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"context_uri\": \"spotify:album:5ht7ItJgpBH7W6vJ5BqpPr\",\n    \"offset\": {\n        \"position\": 5\n    },\n    \"position_ms\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/player/play?device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"play"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pause Playback",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"context_uri\": \"spotify:album:5ht7ItJgpBH7W6vJ5BqpPr\",\n    \"offset\": {\n        \"position\": 5\n    },\n    \"position_ms\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/player/pause?device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"pause"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skip To Next",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/player/next?device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"next"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skip To Previous",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}me/player/previous?device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"previous"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seek To Position",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/seek?position_ms=25000&device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"seek"
+							],
+							"query": [
+								{
+									"key": "position_ms",
+									"value": "25000"
+								},
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Repeat Mode",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/repeat?state=context&device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"repeat"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "context"
+								},
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Playback Volume",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/repeat?volume_percent=50&device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"repeat"
+							],
+							"query": [
+								{
+									"key": "volume_percent",
+									"value": "50"
+								},
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Playback Shuffle",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/shuffle?state=true&device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"shuffle"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "true"
+								},
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recently Played Tracks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/recently-played?limit=10&after=1484811043508",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"recently-played"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "after",
+									"value": "1484811043508"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the User's Queue",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/queue",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"queue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item to Playback Queue",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer BQCvVitkkOlxhpNTS24k_CM2N2Bj754qd1Ymy5WsAG1yWMxJ8B4QeFcqH1xNQhgrSG_TItJ6z2T8m4FALsqtVcJ8V3BlDto9NyOlWngqrVn5UBMX7WH0uzVC7hXj-M6vl51Y0wt6GKbJI3x5ikRm74e-WF_06YxGFPcLd4GuQVl_Oh1nXBBJEkbCZp5pWS5RCyIvcOFnF-8FmPFAVEDTx8DnKgve2aA0TH3gfzA__Ol02LthKBP-EfoEiVr0HSAicesVonmFtIFJRkJOJV6jnz09WlU_aYclIkm5W05T6FLM0w662p9WCgWHP8DocFCq5H-GDAVbNTgYuJ_UdESWnFY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}me/player/queue?uri=spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh&device_id=0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+							"host": [
+								"{{baseUrl}}me"
+							],
+							"path": [
+								"player",
+								"queue"
+							],
+							"query": [
+								{
+									"key": "uri",
+									"value": "spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh"
+								},
+								{
+									"key": "device_id",
+									"value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request User Authorization to Receive the Authorization Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{accountUrl}}authorize?client_id=82339b370f0b4b328852cab7fe873f46&response_type=code&redirect_uri=http://localhost:3000&scope=user-library-read user-library-modify user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private user-follow-read user-follow-modify user-read-playback-position user-library-read user-library-modify playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative ugc-image-upload user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-recently-played&show_dialog=true",
+					"host": [
+						"{{accountUrl}}authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "82339b370f0b4b328852cab7fe873f46"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "state",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "scope",
+							"value": "user-library-read user-library-modify user-read-private user-read-email user-top-read playlist-modify-public playlist-modify-private user-follow-read user-follow-modify user-read-playback-position user-library-read user-library-modify playlist-modify-public playlist-modify-private playlist-read-private playlist-read-collaborative ugc-image-upload user-read-playback-state user-modify-playback-state user-read-currently-playing user-read-recently-played"
+						},
+						{
+							"key": "show_dialog",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Access Token using Authorization Callback Code",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "AQBnbDM1QlbSGa7hoqNJKZ45tv6fEQoYbW1h_N_86v1stNgHV9EQoHGgXZuriSmRYn2Uo8wZExgKxarCk88d7WkGwlRV9atVADt5UuhpiKHpMx451s35zbNXMN-DbOZYfkkJI4ia34YyxqOrFVIV08Q-qe5eYn9k12S2PoThaY0PJycpkW427S6Kb7R8v6zuHGeB3k1OsEAKPzdfQLpw6j4BlTqyGjn9blUi9edf0ahdGrk1bhwH2QHPc4BS8k7B76w5swxRx6KvwzcJKYC9y5tv7_yErJANhqtn1xl3DNSfjyQxOYRABjjWnxH-HJUYmaVgfB4fa4XfwnDkZInFKfWn4R40BF6F14Vd6TJM9KVH88GauWKFBAXTZtLeVcnwt58dJrP-2QpCyi3MTdYbHmZg_cpwY9HScX7Uy31rPtXYl-YzTMILg91-vePCUxAl1_kCH1cZpyu0cZKgkylL2I3ZCFliqwsEta8IXgcvMK_Z9UduxBuXbYhJKJ-rp0wygtsAYCJMIwStSlX2g2uvWMOWTiwlNQEQejB_5c9s66Q7QYOADEF2Nqp5opPUOETg0ol6XGJzLXOeMdWxbFAKjTkl9dkDm_8IOlfqWwRjTwk97zNDMMr9Y4g2KXKENLVIdDaELFbKUzkubJHi3LNxW_OgnGg9xE7CIVVAWQ",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:3000",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "82339b370f0b4b328852cab7fe873f46",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "c52d659a14b2454ca7afc99fe7c01e99",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{accountUrl}}api/token",
+					"host": [
+						"{{accountUrl}}api"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Access Token using Client Credentials",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "82339b370f0b4b328852cab7fe873f46",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "c52d659a14b2454ca7afc99fe7c01e99",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{accountUrl}}api/token",
+					"host": [
+						"{{accountUrl}}api"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accountUrl",
+			"value": "https://accounts.spotify.com/",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://api.spotify.com/v1/",
+			"type": "string"
+		}
+	]
+}
